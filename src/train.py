@@ -1,10 +1,10 @@
 import numpy as np
+from src.model import LinearModel
+from src.loss import mse_loss, mse_gradients
+from src.optim import GradientDescentOptimizer
 from data.generate import generate_linear_data
-from model import LinearModel
-from loss import mse_loss, mse_gradients
-from optim import GradientDescentOptimizer
 
-def train(epochs=200, lr=1.0):
+def train(epochs=200, lr=0.1):
     # 1. Generate synthetic training data
     data = generate_linear_data(n_samples=100, noise_std=0.1)
 
@@ -17,7 +17,7 @@ def train(epochs=200, lr=1.0):
     # 3. Set up optimizer
     optimizer = GradientDescentOptimizer(lr=lr)
 
-    for epoch in epochs:
+    for epoch in range(epochs):
         # Forward
         y_pred = model.predict(data.X_train)
 
