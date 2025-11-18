@@ -62,11 +62,11 @@ Step-by-step implementation plan
 Example usage
 -------------
 - Generate data:
-    - python src/data/generate.py --n 100 --noise 0.1
+    - python src/data/generate.py
 - Train model:
-    - python src/train.py --epochs 1000 --lr 0.01
+    - python src/train.py
 - Evaluate:
-    - python src/eval.py --checkpoint best.pkl
+    - python src/eval.py
 
 Tips & extensions
 -----------------
